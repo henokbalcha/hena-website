@@ -1,0 +1,6 @@
+{
+  "cursor.apiKey": "your_cursor_api_key",
+  "cursor.showInlineCompletion": true,
+  "cursor.inlineCompletionCount": 3,
+  "editor.inlineSuggest.enabled": true
+} 
