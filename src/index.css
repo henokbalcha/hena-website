@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyber-blue: #00f6ff;
+  --cyber-purple: #b026ff;
+  --cyber-pink: #ff2e6d;
+  --cyber-dark: #0a0a0f;
+  --cyber-gray: #1a1a2e;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--cyber-dark);
+  color: white;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cyber-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyber-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyber-blue);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 246, 255, 0.1);
+}
+
+/* Neon Text Effect */
+.neon-text {
+  text-shadow: 0 0 10px var(--cyber-blue),
+               0 0 20px var(--cyber-blue),
+               0 0 30px var(--cyber-blue);
+}
+
+/* Animated Background */
+.cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 246, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 246, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: grid-scroll 20s linear infinite;
+}
+
+@keyframes grid-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+/* Loading Animation */
+.cyber-loading {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.cyber-loading::before,
+.cyber-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  animation: cyber-spin 1s linear infinite;
+}
+
+.cyber-loading::before {
+  border-top-color: var(--cyber-blue);
+  animation-delay: -0.5s;
+}
+
+.cyber-loading::after {
+  border-left-color: var(--cyber-purple);
+}
+
+@keyframes cyber-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
